@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:number_trivia/core/usecases/usecase.dart';
 import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:number_trivia/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:number_trivia/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
@@ -23,7 +24,7 @@ void main() {
         .thenAnswer((_) async => const Right(tNumberTrivia));
 
     // act
-    final result = await usecase.execute();
+    final result = await usecase(NoParams());
     expect(result, const Right(tNumberTrivia));
     // verify the method has been called and once
     verify(() => repo.getRandomNumberTrivia()).called(1);

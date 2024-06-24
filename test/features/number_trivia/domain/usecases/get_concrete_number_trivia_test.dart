@@ -29,7 +29,7 @@ void main() {
 
     //* act
     // calling not yet existent method
-    final result = await usecase.execute(number: tNumber);
+    final result = await usecase(const Params(number: tNumber));
     // usecase should return anything that was returned from the repo
     expect(result, const Right(tNumberTrivia));
     // verify that the method hs been called on the repo
