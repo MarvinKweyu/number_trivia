@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class NumberTriviaLocalDataSource {
   // get cached [NumberTriviaModel] received the last time there was internet
+  /// Throws [CacheException] if no cached data is present.
   Future<NumberTriviaModel> getLastNumberTrivia();
   Future<void> cacheNumberTrivia(NumberTriviaModel trivia);
 }

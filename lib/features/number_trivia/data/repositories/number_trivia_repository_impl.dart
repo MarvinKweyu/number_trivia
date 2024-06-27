@@ -8,7 +8,7 @@ import 'package:number_trivia/features/number_trivia/data/models/number_trivia_m
 import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:number_trivia/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 
-typedef _ConcreteOrRandomChooser = Future<NumberTrivia> Function();
+typedef Future<NumberTriviaModel> _ConcreteOrRandomChooser();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   final NumberTriviaRemoteDataSource remoteSource;
@@ -42,19 +42,17 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
     if (await networkInfo.isConnected) {
       try {
         final remoteTrivia = await getConcreteOrRandom();
-        await localSource.cacheNumberTrivia(remoteTrivia as NumberTriviaModel);
+        localSource.cacheNumberTrivia(remoteTrivia);
         return Right(remoteTrivia);
       } on ServerException {
-        return const Left(
-            ServerFailure(message: 'Unable to fetch records', statusCode: 400));
+        return Left(ServerFailure());
       }
     } else {
       try {
         final localTrivia = await localSource.getLastNumberTrivia();
         return Right(localTrivia);
       } on CacheException {
-        return const Left(
-            CacheFailure(message: 'Something happened!', statusCode: 400));
+        return Left(CacheFailure());
       }
     }
   }

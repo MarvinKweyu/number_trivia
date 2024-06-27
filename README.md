@@ -4,6 +4,7 @@
 
 - [number\_trivia](#number_trivia)
   - [Development](#development)
+  - [To run tests](#to-run-tests)
   - [Directory struct](#directory-struct)
   - [Todo](#todo)
 
@@ -13,6 +14,11 @@
 ```bash
 flutter pub get
 flutter run 
+```
+
+## To run tests
+```bash
+flutter test
 ```
 
 ## Directory struct
