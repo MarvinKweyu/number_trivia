@@ -2,10 +2,13 @@
 
 > A number trivia application
 
+[![Flutter Version](https://img.shields.io/badge/Codebase-Flutter_v3-blue?logo=flutter)](https://flutter.dev/)
+[![Bloc Version](https://img.shields.io/badge/State_Manager-Flutter_bloc-blue)](https://bloclibrary.dev/)
+[![Coverage](https://img.shields.io/badge/Coverage-85.7%-green)](https://bloclibrary.dev/)
+
 - [number\_trivia](#number_trivia)
   - [Development](#development)
   - [To run tests](#to-run-tests)
-  - [Directory struct](#directory-struct)
   - [Todo](#todo)
 
 
@@ -21,10 +24,5 @@ flutter run
 flutter test
 ```
 
-## Directory struct
-
-`repositories` in *data* holds implementations
-`repositories` in *domain* hold abstract classes & interfaces
-
 ## Todo
- - [ ] Move to hydrated bloc
+ - [ ] Move to hydrated bloc for storage

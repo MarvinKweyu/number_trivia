@@ -3,12 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:number_trivia/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
-import 'package:number_trivia/features/number_trivia/presentation/widgets/loading_widget.dart';
-import 'package:number_trivia/features/number_trivia/presentation/widgets/message_display.dart';
-import 'package:number_trivia/features/number_trivia/presentation/widgets/trivia_controls.dart';
-import 'package:number_trivia/features/number_trivia/presentation/widgets/trivia_display.dart';
+import 'package:number_trivia/features/number_trivia/presentation/widgets/widgets.dart';
 import 'package:number_trivia/injection_container.dart';
-
 
 
 class NumberTriviaPage extends StatelessWidget {

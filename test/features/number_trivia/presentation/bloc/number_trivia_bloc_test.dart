@@ -41,7 +41,7 @@ void main() {
 
   test('initialState should be Empty', () {
     // assert
-    expect(bloc.state, equals(Empty()));
+    expect(bloc.state, equals(NumberTriviaInitial()));
   });
 
   group('GetTriviaForConcreteNumber', () {
@@ -95,8 +95,8 @@ void main() {
         bloc.add(const GetTriviaForConcreteNumber(tNumberString));
         await untilCalled(() => mockGetConcreteNumberTrivia(any()));
         // assert
-        verify(
-            () => mockGetConcreteNumberTrivia(const Params(number: tNumberParsed)));
+        verify(() =>
+            mockGetConcreteNumberTrivia(const Params(number: tNumberParsed)));
       },
     );
 
