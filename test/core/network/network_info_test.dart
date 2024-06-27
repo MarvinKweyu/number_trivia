@@ -3,6 +3,8 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:number_trivia/core/network/network_info.dart';
 
+import '../../features/number_trivia/data/data_sources/number_trivia_local_data_source_test.dart';
+
 class MockInternetConnectionChecker extends Mock
     implements InternetConnectionChecker {}
 
@@ -35,5 +37,7 @@ void main() {
       verify(() => mockInternetConnectionChecker.hasConnection);
       expect(result, tHasConnectionFuture);
     });
+
+
   });
 }
